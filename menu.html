@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Class</title>
+    <style>
+        body {
+            background: linear-gradient(to bottom, #f7f7f7, #e7e7e7);
+
+        }
+        .containerx {
+            background: linear-gradient(to bottom, #f7f7f7, #e7e7e7);
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 10px;
+            }
+
+        .box {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .box:hover {
+            background-color: #f7f7f7;
+            border-color: #ccc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+         }
+
+        .containerx {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* make it full height */
+            width: 100%; /* make it full width */
+            max-width: 800px; /* set a maximum width */
+            margin: 0 auto; /* center it horizontally */;
+        }
+        
+        
+        .container {
+            display: flex;
+            gap: 10px;
+        }
+
+
+        .column {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .box {
+            border: 1px solid black;
+            padding: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .small {
+            width: 100px;
+            height: 50px;
+        }
+
+        .small9 {
+            width: 50px;
+            height: 50px;
+        }
+
+        .small6 {
+            width: 220px;
+            height: 50px;
+        }
+        .medium {
+            width: 150px;
+            height: 85px;
+            margin-left: -175px;
+        }
+
+        .large {
+            width: 100px;
+            height: 270px;
+        }
+        .wide {
+            width: 395px;
+            height: 50px;
+            margin-top: 5px;
+            margin-top: -70px;
+            
+        }
+
+        .wide4 {
+            width: 100px;
+            height: 50px;
+            margin-top: -70px;
+            margin-left: 420px;
+        }
+
+        .tall {
+            width: 100px;
+            height: 120px;
+        }
+        
+        .tall2 {
+            margin-top: 73px;
+            margin-left: -120px;
+            width: 100px;
+            height: 120px;
+        }
+
+        .c4 {
+            width: 280px;
+            height: 50px;
+        }
+
+        .c10 {
+            margin-top: 15px;
+            width: 220px;
+            height: 50px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+    </style> 
+</head>
+<body>
+    <div class="containerx">
+        <div class="container">
+            <div class="column">
+                <div class="box small" id="class1">Class 1</div>
+                <div class="box small" id="class2">Class 2</div>
+                <div class="box small" id="class3">Class 3</div>
+                <div class="box c4" id="class4">Class 4</div>
+            </div>
+            <div class="column">
+                <div class="box medium" id="class5A">Class 5 A</div>
+                <div class="box medium" id="class5B">Class 5 B</div>
+            </div>
+            <div class="column">
+                <div class="box small6" id="class6">Class 6</div>
+                <div class="column" style="gap: 0;">
+                    <div class="box tall" id="class7">Class 7</div>
+                    <div class="box c10" id="class9">Class 9</div>
+                </div>
+                
+            </div>
+            <div class="column">
+                <div class="box tall2" id="class8">Class 8</div>
+            </div>
+            <div class="column">
+                <div class="box large" id="class10">Class 10</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Get all box elements
+        const boxes = document.querySelectorAll('.box');
+    
+        // Define the mapping of box IDs to URLs
+        const urlMap = {
+            class1: '1.html',
+            class2: '2.html',
+            class3: '3.html',
+            class4: '4.html',
+            class5A: '5a.html',
+            class5B: '5b.html',
+            class6: '6.html',
+            class7: '7.html',
+            class8: '8.html',
+            class9: '9.html',
+            class10: '10.html',
+            // Add more mappings for other classes as needed
+        };
+    
+        // Add a click event listener to each box
+        boxes.forEach(box => {
+            box.addEventListener('click', () => {
+                const boxId = box.id;
+                const targetUrl = urlMap[boxId];
+                if (targetUrl) {
+                    window.location.href = targetUrl;
+                } else {
+                    console.error(`No URL found for box with ID: ${boxId}`);
+                }
+            });
+        });
+    </script>
+    
+</body>
+</html>
